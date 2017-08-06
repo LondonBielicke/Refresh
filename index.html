@@ -1,100 +1,143 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Refresh</title>
-   <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT41MRL-lmWJQZzn1LI4qWeUyVsFxtalkEWKHWG7SzSmbmZt-PW">
-  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src = "link.js"></script>
-    <script src = "morelink.js"></script>
-    
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="UTF-8">
+<title>Refresh</title>
+<link rel="stylesheet" type="text/css" href="testing.css">
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 </head>
-
 <body>
-  <a-scene>
+  
+
+<div id="mySidebar">
+   <a href="#about" onclick = "closeNav()">ABOUT</a>
+  <a href="wah.html" onclick = "closeNav()">GAME</a>
+      <a href="testin.html" onclick = "closeNav()">INSPIRE</a>
+      <a href="testin.html" onclick = "closeNav()">BREATHE</a>
+      <a href="#vent" onclick = "closeNav()">VENT</a>
+       <a href="#customize" onclick = "closeNav()">CUSTOMIZE</a>
+      <a href = "#jumbotron" onclick = "closeNav()" onclick = "popUp()">SAFE PLACE</a>
     
-    <a-assests>
-      <img id="sky-mountain" src="images/mount.jpg">
-      <img id="sky-beach" src="images/bea.jpg">
-      <img id="sky-stars" src="images/space.jpeg">
-    </a-assests>
-    <a-sound src="src: url(Gabrielle Aapri - Brokenhearted.mp3)" autoplay="true" position="0 2 5" loop=true></a-sound>
-    <!--<a-sound src="src: url(waves.mp3)" autoplay="true" position="0 2 5" loop=true></a-sound>-->
-    <!--<a-sound src="src: url(calm.mp3)" autoplay="true" position="0 2 5" loop=true></a-sound>-->
-      <a-camera>
-      <a-cursor></a-cursor>
-    </a-camera>
+</div>
 
-<!--Home screen-->
-
-    <a-entity id="scene2" visible=true>
-      <a-sky id="a-home" src="#sky-stars"></a-sky>
+    <div id="top-bar">
+    <h3><a href="index.html">REFRESH</a></h3>
+    <ul>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="wah.html">GAME</a></li>
+      <li><a href="testin.html">INSPIRE</a></li>
+      <li><a href="testin.html">BREATHE</a></li>
+      <li><a href="#vent">VENT</a></li>
+      <li onclick = "popUp()"><a>SAFE PLACE</a></li>
+      <li><a href="#customize">CUSTOMIZE</a></li>
       
-      <a-text id="breatheText" value="Breathe" visible=true position="-.46 3.35 -4" font="monoid"></a-text>
-      <a-text value="Take Your Mind Away With a Game" visible=true position="4 3.35 -1.65" font="monoid" rotation="0 -90 0"></a-text>
-      <a-text value="Motivation" visible=true position="-4 3.35 .57" font="monoid" rotation="0 90 0"></a-text>
-      <a-sphere class = "clickme" id="clickme" radius="1" position="0 2 -4" color="#597baf">
-        <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="0 2 -4" to="0 1.6 -4" direction="alternate" repeat="indefinite"></a-animation>
-      </a-sphere>
-
-      <a-sphere id = "clickme3"color="#597baf" radius="1" position="4 2 0" color="black" href="wah.html">
-        <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="4 2 0" to="4 1.6 0" direction="alternate" repeat="indefinite"></a-animation>
-      </a-sphere>
-      <a-sphere class = "clickme" id="clickme2" color="#597baf" radius="1" position="-4 2 0" color="black">
-        <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="-4 2 0" to="-4 1.6 0" direction="alternate" repeat="indefinite"></a-animation>
-      </a-sphere>
-
-
-    </a-entity>
+    </ul>
+    <button id = "closeButton" onclick="closeNav()">&times;</button>
+     <button id="navButton" onclick="openNav()">&#9776;</button>
     
-<!--Breathe-->
-    <a-entity id="scene3" visible=false>
-      <a-sky id="breathe" src="#sky-stars" ></a-sky>
-     
-      <a-sphere id = "breath"  color="#f88379"   radius="1" position="0 1.6 -5" rotation="0 5 0" onclick="breatheText()">>
-       <a-animation attribute="radius" begin="0" dur = "4000" from="1" to="2.5" direction="alternate" repeat="indefinite"></a-animation>
-      <a-text id= "in" value="Breathe in and out with the circles." width="5" position="0 1.3 3" align="center" font="monoid"></text>
-      
-      <!--   <a-animation begin="click" attribute="value" dur = "1000" from="Breathe in." to="Breathe out" repeat="indefinite">-->
-      <!--</a-animation>-->
-      </a-sphere>
-      <a-sphere id = "breath2" color="#f88379"   radius="1" position="0 1.6 5" rotation="0 5 0">
-       <a-animation attribute="radius" begin="0" dur = "4000" from="1" to="2.5" direction="alternate" repeat="indefinite"></a-animation>
-      
-      </a-sphere>
-       <a-sphere id = "breath3" color="#f88379"   radius="1" position="-5 1.6 0" rotation="0 5 0">
-       <a-animation attribute="radius" begin="0" dur = "4000" from="1" to="2.5" direction="alternate" repeat="indefinite"></a-animation>
-      
-      </a-sphere>
-      <a-sphere id = "breath4" color="#f88379"  radius="1" position="5 1.6 0" rotation="0 5 0">
-       <a-animation attribute="radius" begin="0" dur = "4000" from="1" to="2.5" direction="alternate" repeat="indefinite"></a-animation>
-       
-      </a-sphere>
-<a-box height="0.5" width="0.5" depth="0.25" color="#ACF0F2" position="0 3 -1" onclick="home()" >
-  <a-text value="Home" position="0 -0.1 0.2" align= "center" font="monoid" color="#225378" width="3"></a-text>
-</a-box>
+</div>
 
-    </a-entity>
-    <!--Motivation-->
-   
-    <a-entity id="scene4" visible=false>
-      <a-sky id="motivation" src="#sky-stars" ></a-sky>
-      <a-box  id = "q" position="0 2 -3" onclick="quote()" width="0.5" depth="0.5" height="0.5" color= "#f88379">
-    <a-text id="quoteText" visible= true  width="5" value = "Click on the box for suprise motivation"  position="0 0 0.5" color = "white" font="kelsonsans" align="center">
-    </a-text>
-    </a-box>
-<a-box id = "q2" height="0.5" width="0.5" depth="0.25" color="white" position="0 3 -1" onclick="home()" >
-  <a-text value="Home" position="0 -0.1 0.2" align= "center" font="monoid" color="white" width="3"></a-text>
-</a-box>
-    </a-entity>
+
+<div id = "main">
+
+
+<div id = "begin" >
+  <div id = "jumbotron">
+  <h1>Revive Your Mind</h1>
+  <p>Your customizable meditation destination</p>
+  <button id="button" onclick = "popUp()">GETAWAY</button>
+  <p id = "or">or</p>
+  <button id="button2" onclick = "window.location.href='testin.html'">GETAWAY</button>
+  </div>
+</div>
+
+<div id = "customize">
+  <div class = "settings" id = "settings2">
+    <h3>SETTING</h3>
+    <div id = "setting"><h4 id = "set">MOUNTAINS</h4><a class="prev" onclick="showSlides2(-1)">&#10094;</a>
+<a class="next" onclick="showSlides2(1)">&#10095;</a></div>
+ 
+  </div>
+  <div class = "settings" id = "settings3">
+    <h3>COLORS</h3>
+       <div id = "colors"><h4 id = "col">BLUE</h4>
+         <a class="prev" onclick="showSlides(-1)">&#10094;</a>
+<a class="next" onclick="showSlides(1)">&#10095;</a>
+       </div>
+  
+  </div>
+  <div class = "settings" id = "settings4">
+    <h3>MUSIC</h3>
+       <div id = "music"> <h4 id = "mus">WAVES</h4> <a class="prev" on
+       click="showSlides3(-1)">&#10094;</a>
+<a class="next" onclick="showSlides3(1)">&#10095;</a></div>
+  
+    </div>
+  <div class = "settings" id = "settings5">
+    <h3>WORRIES</h3>
+       <div id = "worry"> <h4 id = "wor">WORK</h4> <a class="prev" onclick="showSlides4(-1)">&#10094;</a>
+<a class="next" onclick="showSlides4(1)">&#10095;</a></div>
+
+    </div>
+</div>
+
+
+
+<div id = "vent">
+  <div id = "room">
+    <h2>THE VENTING ROOM</h2>
+    <p>To banish your mind whirling thoughts rant about anything in the text box and press enter</p>
+    <input type = "text" id = "userInput" onkeydown = "userBubble()" placeholder = "ENTER YOUR THOUGHTS">
+    <br></br>
+    <button id = "go" onclick="userGO()">GO</button>
+    <br></br>
+    <div id = "texty">
+    <p id = "userText">ENTER YOUR THOUGHTS</p>
+    </div>
+  </div>
+</div>
+
+<div id = "about">
+  <div id = "insert" >
     
+    <h2>About Us</h2>
+    <p>We are high school students in the greater St. Louis area with growing passion and ability to code. Sparking our coding superpowers was a camp called Kode with Klossy, a non-profit started by supermodel Karlie Kloss. During our second year in level 2 we were placed in our final projects as teamates and worked to create this website, which we later built out and submitted to built by girls. Now we are here, pitching our idea to influencers and building our brand, Refresh.</p>
+    <br></br>
+  </div>
+  
+  <!--<div id = "insert2">-->
+    
+  <!--  <h2>About Refresh</h2>-->
+  <!--  <p>Refresh is a website and mobile app designed for users with stress and anxiety, so this app is marketable to nearly everyone. Everyone deals with stress at some point within their lifetime. Whether your struggling with full blown panic attacks, or first day jitters, we are here to give you the recources to escape to your personalized meditation destination. So sit back, relax, and have some fun as you venture through your virtual paradise.</p>-->
+  <!--  <br></br>-->
+  <!--</div>-->
+  
+</div>
 
-  </a-scene>
-  <!--<a-scene id = "second" visible=false>-->
-  <!--    <a-sky = "white"></a-sky>-->
-  <!--</a-scene>-->
-  <script src = "testing.js"></script>
-  <script src="script.js"></script>
+<div id = "footer">
+<div id = "sect">
+  <h4>FOLLOW US</h4>
+  <ul>
+    <li><img src = "https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"></li>
+    <li><img src = "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1259px-Twitter_bird_logo_2012.svg.png"></li>
+    <li><img src = "https://www.seeklogo.net/wp-content/uploads/2016/06/YouTube-icon-400x400.png"></li>
+    <li><img src = "https://cdn.worldvectorlogo.com/logos/snapchat.svg"></li>
+  </ul>
+</div>
+<!--<div id = "sect2">-->
+<!--  <h4>FOLLOW KODE WITH KLOSSY</h4>-->
+<!--  <ul>-->
+<!--    <li>instagram</li>-->
+<!--    <li>twitter</li>-->
+<!--    <li>snapchat</li>-->
+<!--    <li>youtube</li>-->
+<!--  </ul>-->
+<!--</div>-->
+</div>
+</div>
+
+<script src="testing.js"></script>
 </body>
-
 </html>
