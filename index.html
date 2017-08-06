@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Refresh</title>
+   <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT41MRL-lmWJQZzn1LI4qWeUyVsFxtalkEWKHWG7SzSmbmZt-PW">
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src = "link.js"></script>
+    <script src = "morelink.js"></script>
+    
+</head>
+
+<body>
+  <a-scene>
+    
+    <a-assests>
+      <img id="sky-mountain" src="images/mount.jpg">
+      <img id="sky-beach" src="images/bea.jpg">
+      <img id="sky-stars" src="images/space.jpeg">
+    </a-assests>
+    <a-sound src="src: url(Gabrielle Aapri - Brokenhearted.mp3)" autoplay="true" position="0 2 5" loop=true></a-sound>
+    <!--<a-sound src="src: url(waves.mp3)" autoplay="true" position="0 2 5" loop=true></a-sound>-->
+    <!--<a-sound src="src: url(calm.mp3)" autoplay="true" position="0 2 5" loop=true></a-sound>-->
+      <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+
+<!--Home screen-->
+
+    <a-entity id="scene2" visible=true>
+      <a-sky id="a-home" src="#sky-stars"></a-sky>
+      
+      <a-text id="breatheText" value="Breathe" visible=true position="-.46 3.35 -4" font="monoid"></a-text>
+      <a-text value="Take Your Mind Away With a Game" visible=true position="4 3.35 -1.65" font="monoid" rotation="0 -90 0"></a-text>
+      <a-text value="Motivation" visible=true position="-4 3.35 .57" font="monoid" rotation="0 90 0"></a-text>
+      <a-sphere class = "clickme" id="clickme" radius="1" position="0 2 -4" color="#597baf">
+        <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="0 2 -4" to="0 1.6 -4" direction="alternate" repeat="indefinite"></a-animation>
+      </a-sphere>
+
+      <a-sphere id = "clickme3"color="#597baf" radius="1" position="4 2 0" color="black" href="wah.html">
+        <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="4 2 0" to="4 1.6 0" direction="alternate" repeat="indefinite"></a-animation>
+      </a-sphere>
+      <a-sphere class = "clickme" id="clickme2" color="#597baf" radius="1" position="-4 2 0" color="black">
+        <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="-4 2 0" to="-4 1.6 0" direction="alternate" repeat="indefinite"></a-animation>
+      </a-sphere>
+
+
+    </a-entity>
+    
+<!--Breathe-->
+    <a-entity id="scene3" visible=false>
+      <a-sky id="breathe" src="#sky-stars" ></a-sky>
+     
+      <a-sphere id = "breath"  color="#f88379"   radius="1" position="0 1.6 -5" rotation="0 5 0" onclick="breatheText()">>
+       <a-animation attribute="radius" begin="0" dur = "4000" from="1" to="2.5" direction="alternate" repeat="indefinite"></a-animation>
+      <a-text id= "in" value="Breathe in and out with the circles." width="5" position="0 1.3 3" align="center" font="monoid"></text>
+      
+      <!--   <a-animation begin="click" attribute="value" dur = "1000" from="Breathe in." to="Breathe out" repeat="indefinite">-->
+      <!--</a-animation>-->
+      </a-sphere>
+      <a-sphere id = "breath2" color="#f88379"   radius="1" position="0 1.6 5" rotation="0 5 0">
+       <a-animation attribute="radius" begin="0" dur = "4000" from="1" to="2.5" direction="alternate" repeat="indefinite"></a-animation>
+      
+      </a-sphere>
+       <a-sphere id = "breath3" color="#f88379"   radius="1" position="-5 1.6 0" rotation="0 5 0">
+       <a-animation attribute="radius" begin="0" dur = "4000" from="1" to="2.5" direction="alternate" repeat="indefinite"></a-animation>
+      
+      </a-sphere>
+      <a-sphere id = "breath4" color="#f88379"  radius="1" position="5 1.6 0" rotation="0 5 0">
+       <a-animation attribute="radius" begin="0" dur = "4000" from="1" to="2.5" direction="alternate" repeat="indefinite"></a-animation>
+       
+      </a-sphere>
+<a-box height="0.5" width="0.5" depth="0.25" color="#ACF0F2" position="0 3 -1" onclick="home()" >
+  <a-text value="Home" position="0 -0.1 0.2" align= "center" font="monoid" color="#225378" width="3"></a-text>
+</a-box>
+
+    </a-entity>
+    <!--Motivation-->
+   
+    <a-entity id="scene4" visible=false>
+      <a-sky id="motivation" src="#sky-stars" ></a-sky>
+      <a-box  id = "q" position="0 2 -3" onclick="quote()" width="0.5" depth="0.5" height="0.5" color= "#f88379">
+    <a-text id="quoteText" visible= true  width="5" value = "Click on the box for suprise motivation"  position="0 0 0.5" color = "white" font="kelsonsans" align="center">
+    </a-text>
+    </a-box>
+<a-box id = "q2" height="0.5" width="0.5" depth="0.25" color="white" position="0 3 -1" onclick="home()" >
+  <a-text value="Home" position="0 -0.1 0.2" align= "center" font="monoid" color="white" width="3"></a-text>
+</a-box>
+    </a-entity>
+    
+
+  </a-scene>
+  <!--<a-scene id = "second" visible=false>-->
+  <!--    <a-sky = "white"></a-sky>-->
+  <!--</a-scene>-->
+  <script src = "testing.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
