@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Stress Relief Game</title>
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT41MRL-lmWJQZzn1LI4qWeUyVsFxtalkEWKHWG7SzSmbmZt-PW">
+  <script src = "link.js"></script>
+    <script src = "morelink.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+  <script src="wah.js"></script>
+  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assests>
+      <img id="mountain" src="images/15194933880_a64f323220_o.jpg">
+    </a-assests>
+    
+      <a-camera position="0 0 .8">
+      <a-cursor></a-cursor>
+    </a-camera>
+    
+   
+    
+
+
+      <a-sky color="black"></a-sky>
+      
+      <!--<a-box height="0.15" width="0.15" depth="0.15" color="#ACF0F2"  onclick="home()" position="0 2.7 0" >-->
+      <!--  <a-text value="Home" position="0 2.7 .15" align= "center" font="monoid" color="#225378" width=".14"></a-text>-->
+      <!--</a-box>-->
+      
+      <a-text id = "instruct" position="0 2 0" width= "1" align= "center" value = "click on the bouncing sphere to begin. When any blue sphere turns pink, they are passing to you. you must pass to sojmeone else before time runs out. If the spheres to you sides turn any color besides pink you must click before time runs out."></a-text>
+      <a-sphere id="begin" radius=".1" position="0 2.4 0" color="pink" onclick="beginGame()">
+         <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="0 2.4 0" to="0 2.45 0" direction="alternate" repeat="indefinite" end="click" ></a-animation>
+      </a-sphere>
+      
+      <a-sphere id="starterAI" radius="0.125" position="0 1.5 -.7" color="#597baf" >
+        
+      </a-sphere>
+      
+    
+        
+      
+      <a-sphere id = "rightAI" color="#597baf" radius="0.125" position=".5 1.6 -.35" color="black" href="wah.html">
+       
+      </a-sphere>
+      <a-sphere id="leftAI" color="#597baf" radius="0.125" position="-.5 1.6 -.35" color="black">
+        
+      </a-sphere>
+     
+
+    
+
+  </a-scene>
+  <!--<a-scene id = "second" visible=false>-->
+  <!--    <a-sky = "white"></a-sky>-->
+  <!--</a-scene>-->
+ 
+</body>
+
+</html>
